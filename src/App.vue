@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <img width="25%" src="./assets/logo.png">
-    <Agenda msg="Your component goes here..."/>
+    <img width="25%" src="./assets/bloemert-logo.png">
+    <HelloWorld msg="Your component goes here..."/>
   </div>
 </template>
 
