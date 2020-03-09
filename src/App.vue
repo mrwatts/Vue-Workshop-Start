@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img width="25%" src="./assets/logo.png">
+    <img width="25%" src="./assets/bloemert-logo.png">
     <HelloWorld msg="Your component goes here..."/>
   </div>
 </template>
