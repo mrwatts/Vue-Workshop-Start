@@ -11,8 +11,8 @@ export function getCalendarMonth(year, month, day) {
   return result;
 }
 
-export function getItemsPerMonth(year, month, day) {
-  var n = getIsoWeekDaysInMonth(year, month, day);
+export function getItemsPerMonth(year, month) {
+  var n = getIsoWeekDaysInMonth(year, month, 1);
 
   var arr = Array.from(
     {
@@ -35,12 +35,12 @@ export function getItemsPerMonth(year, month, day) {
   });
 }
 
-export function getFullMonthName(year, month, day) {
-  return moment(year + "-" + month + "-" + day, "YYYY-MM-DD").format("MMMM");
+export function getFullMonthName(year, month) {
+  return moment(year + "-" + month + "-01", "YYYY-MM-DD").format("MMMM");
 }
 
-export function getIsoWeekDaysInMonth(year, month, day) {
-  var momentObj = moment(year + "-" + month + "-" + day, "YYYY-MM-DD");
+export function getIsoWeekDaysInMonth(year, month) {
+  var momentObj = moment(year + "-" + month + "-01", "YYYY-MM-DD");
 
   var mFirstIsoWeekDayOfMonth = momentObj
     .clone()

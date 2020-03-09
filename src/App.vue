@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img width="25%" src="./assets/logo.png">
-    <HelloWorld msg="Your component goes here..."/>
+    <Agenda msg="Your component goes here..."/>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import Agenda from "./components/Agenda";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    Agenda
   }
 };
 </script>
