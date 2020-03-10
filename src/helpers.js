@@ -12,7 +12,7 @@ export function getCalendarMonth(year, month, day) {
 }
 
 export function getItemsPerMonth(year, month) {
-  var n = getIsoWeekDaysInMonth(year, month, 1);
+  var n = getIsoWeekDaysInMonth(year, month);
 
   var arr = Array.from(
     {
@@ -35,8 +35,8 @@ export function getItemsPerMonth(year, month) {
   });
 }
 
-export function getFullMonthName(year, month) {
-  return moment(year + "-" + month + "-01", "YYYY-MM-DD").format("MMMM");
+export function getFullMonthName(month) {
+  return moment("2020-" + month + "-01", "YYYY-MM-DD").format("MMMM");
 }
 
 export function getIsoWeekDaysInMonth(year, month) {
@@ -54,6 +54,29 @@ export function getIsoWeekDaysInMonth(year, month) {
   var d = moment.duration(mLastIsoWeekDayOfMonth.diff(mFirstIsoWeekDayOfMonth));
 
   return d.asDays() + 1;
+}
+
+export function getAppointments() {
+  return [
+    {
+      id: 1,
+      date: new Date("2020-03-12 18:00"),
+      description: "Tech Event Dinner!",
+      important: true
+    },
+    {
+      id: 2,
+      date: new Date("2020-03-12 19:00"),
+      description: "Workshops Session I",
+      important: false
+    },
+    {
+      id: 3,
+      date: new Date("2020-03-12 20:00"),
+      description: "Workshops Session II",
+      important: false
+    }
+  ];
 }
 
 moment.prototype.monthId = function() {

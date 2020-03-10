@@ -18,7 +18,7 @@ export default {
 
 <style>
 body {
-  background-color: #000;
+  background-color: rgba(2, 21, 49, 0.95);
   color: #FFF;
 }
 #app {
