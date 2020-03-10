@@ -1,15 +1,4 @@
 import moment from "moment";
-import _ from "lodash";
-
-export function getCalendarMonth(year, month, day) {
-  var arr = getItemsPerMonth(year, month, day);
-
-  var result = _.groupBy(arr, function(m) {
-    return m.date.isoWeek();
-  });
-
-  return result;
-}
 
 export function getItemsPerMonth(year, month) {
   var n = getIsoWeekDaysInMonth(year, month);
@@ -24,10 +13,9 @@ export function getItemsPerMonth(year, month) {
         .add(i, "days")
   );
 
-  var reqMonthId = moment(year + "-" + month + "-01", "YYYY-MM-DD").monthId();
+  const reqMonthId = moment(year + "-" + month + "-01", "YYYY-MM-DD").monthId();
   return arr.map(x => {
     return {
-      dayId: x.dayId(),
       date: x,
       labelCount: 0,
       isInReqMonth: reqMonthId === x.monthId()
@@ -81,12 +69,4 @@ export function getAppointments() {
 
 moment.prototype.monthId = function() {
   return Number(this.format("YYYYMM"));
-};
-
-moment.prototype.weekId = function() {
-  return Number(this.format("YYYYWW"));
-};
-
-moment.prototype.dayId = function() {
-  return Number(this.format("YYYYMMDD"));
 };
