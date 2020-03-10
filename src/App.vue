@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img width="25%" src="./assets/bloemert-logo.png">
+    <img width="25%" src="./assets/logo.png">
     <HelloWorld msg="Your component goes here..."/>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
 
 <style>
 body {
-  background-color: #000;
+  background-color: rgba(2, 21, 49, 0.95);
   color: #FFF;
 }
 #app {
